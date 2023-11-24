@@ -1,0 +1,11 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+body {
+    font-family: Pretendard;
+    justify-content: center; /* 주축(가로축)에서 중앙 정렬 */
+}
+
+.profile-section {
+    background-color: #ffeb3b; /* yellow color */
+    padding: 2.3em;
+}
