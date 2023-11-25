@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COCOMOA 로그인</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link type="text/css" rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-white text-black min-h-screen flex flex-col items-center justify-center">
-<div class="text-center">
-    <h1 class="text-4xl font-bold mb-8">코코모아는<br/>당신의 꿈을<br/>응원합니다</h1>
-    <button class="bg-gray-200 hover:bg-gray-300 text-black font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-        카카오 로그인
-    </button>
-</div>
-<script>
-    // Add any JavaScript you need here
-</script>
+    <script>
+        // TODO: API KEY 와 Redirect URI 채워야 함. 그리고 리다이렉트 이후에 index로 라우팅
+        const KAKAO_REST_API_KEY = "1"; //REST API KEY
+        const KAKAO_REDIRECT_URI = "2"; //Redirect URI
+        const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_REST_API_KEY}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
+
+        const handleKakaoLogin = ()=>{
+            window.location.href = kakaoURL;
+        }
+    </script>
+
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-24">코코모아는<br/>당신의 꿈을<br/>응원합니다</h1>
+        <a onclick="handleKakaoLogin()">
+            <img class="w-56 items-center justify-center" src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"  alt="kakaologin"/>
+        </a>
+    </div>
 </body>
 </html>
