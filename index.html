@@ -6,6 +6,7 @@
     <title>COCOMOA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link type="text/css" rel="stylesheet" href="./style.css">
+    <script src="index.js" defer=""></script>
 </head>
 <body class="bg-white text-gray-800 mx-auto w-7/12">
 <header class="text-left p-6">
@@ -31,8 +32,8 @@
 
     <section class="my-4">
         <h2 class="text-2xl font-semibold mb-4">* 최종성과 발표회 아이디어들 *</h2>
-        <div class="grid grid-cols-3 gap-4">
-            <div class="p-4 rounded-lg shadow-lg bg-gray-300">
+        <div class="item-table grid grid-cols-3 gap-4">
+            <div class="item p-4 rounded-lg shadow-lg">
                 <div class="w-full h-64 my-4 rounded-lg flex items-center justify-center">
                     <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/919e1ba0-e13e-49ae-a660-181817e3970d-profile_image-300x300.png">
                 </div>
@@ -40,24 +41,13 @@
                 <p class="font-semibold">디지털 보부상 주목,노트북+태블릿 한 방에 해결!</p>
                 <p>N사 아이패드 파우치 1위에 새로운 신작! 아이패드/노트북 파우치&가방</p>
                 <p>현재 투자 금액: 000 원</p>
-            </div>
-            <div class="p-4 rounded-lg shadow-lg">
-                <div class="w-full h-64 my-4 rounded-lg flex items-center justify-center">
-                    <img src="https://image.fmkorea.com/files/attach/new3/20230517/494354581/5422195760/5777684863/b5edceb05a174e368d1c465805e06684.png">
+                <div class="hover-button w-5/6">
+                    <form action="./trading.html" method="post" class="w-full">
+                        <button class="w-full h-12 my-4 rounded-lg flex items-center justify-center bg-red-500 text-white">매수하기</button>
+                        <div></div>
+                        <button class="w-full h-12 my-4 rounded-lg flex items-center justify-center bg-blue-500 text-white">매도하기</button>
+                    </form>
                 </div>
-                <h3 class="text-lg font-bold">Title</h3>
-                <p class="font-semibold">디지털 보부상 주목,노트북+태블릿 한 방에 해결!</p>
-                <p>N사 아이패드 파우치 1위에 새로운 신작! 아이패드/노트북 파우치&가방</p>
-                <p>현재 투자 금액: 000 원</p>
-            </div>
-            <div class="p-4 rounded-lg shadow-lg">
-                <div class="w-full h-64 my-4 rounded-lg flex items-center justify-center">
-                    <img src="https://img.hankyung.com/photo/202309/ZK.34399539.1-1200x.jpg">
-                </div>
-                <h3 class="text-lg font-bold">Title</h3>
-                <p class="font-semibold">디지털 보부상 주목,노트북+태블릿 한 방에 해결!</p>
-                <p>N사 아이패드 파우치 1위에 새로운 신작! 아이패드/노트북 파우치&가방</p>
-                <p>현재 투자 금액: 000 원</p>
             </div>
         </div>
     </section>

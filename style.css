@@ -9,3 +9,31 @@ body {
     background-color: #ffeb3b; /* yellow color */
     padding: 2.3em;
 }
+
+.item {
+    position: relative; /* 자식 요소인 버튼을 올바르게 배치하기 위함 */
+    transition: background-color 0.3s; /* 배경색 변경 효과 */;
+}
+.item img {
+    transition: filter 0.3s; /* 이미지 필터 변경 효과 */
+}
+
+.item:hover {
+    background-color: grey; /* 마우스 오버시 배경색 변경 */
+}
+.item:hover img {
+    filter: brightness(50%);
+}
+
+.item .hover-button {
+    display: none; /* 기본 상태에서는 버튼 숨김 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+}
+
+.item:hover .hover-button {
+    display: flex; /* 마우스 오버시 버튼 보임 */
+    z-index: 100;
+}
