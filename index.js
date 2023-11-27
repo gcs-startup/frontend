@@ -19,9 +19,11 @@ function createItem (enteredId, enteredImageUri, enteredTitle, enteredMainMessag
         </div>
     </div>
      */
+    // item container 생성
     const item = document.createElement('div');
     item.className = 'item p-4 rounded-lg shadow-lg';
 
+    // item Image
     const itemImage = document.createElement('div');
     itemImage.className = "w-full h-64 my-4 rounded-lg flex items-center justify-center";
     const imageUri = document.createElement('img');
@@ -30,36 +32,44 @@ function createItem (enteredId, enteredImageUri, enteredTitle, enteredMainMessag
     itemImage.appendChild(imageUri);
     item.appendChild(itemImage);
 
+    // 아이디어 제목
     const title = document.createElement('h3');
     title.className = 'text-lg font-bold';
     title.textContent = enteredTitle;
     item.appendChild(title);
 
+    // 아이디어 메인 설명
     const mainMessage = document.createElement('p');
     mainMessage.className = 'font-semibold';
     mainMessage.textContent = enteredMainMessage;
     item.appendChild(mainMessage);
 
+    // 아이디어 서브 설명
     const subMessage = document.createElement('p');
     subMessage.textContent = enteredSubMessage;
     item.appendChild(subMessage);
 
+    // 내가 지금까지 이 아이템에 투자한 금액
     const paidMoney = document.createElement('p');
     paidMoney.className = 'paid-money text-red';
-    paidMoney.textContent = `현재 투자 금액: 000 원`;
+    paidMoney.textContent = `현재 투자 금액: 000 원`; // 투자금액란 수정 요망
     item.appendChild(paidMoney);
 
+    // 아이템 매수 매도 버튼. hover시 나타남
     const hoverButtons = document.createElement('div');
     hoverButtons.className = 'hover-button w-5/6';
+    // form
     const form = document.createElement('form');
     form.className = 'w-full';
     form.action = './trading.html';
     form.method = 'get';
+    // 매수버튼
     const buyingButton = document.createElement('button');
     buyingButton.className = 'w-full h-12 my-4 rounded-lg flex items-center justify-center bg-red-500 text-white';
     buyingButton.name = 'tradingButton';
     buyingButton.value = 'buy';
     buyingButton.textContent = '매수하기';
+    // 매도버튼
     const sellingButton = document.createElement('button');
     sellingButton.className = 'w-full h-12 my-4 rounded-lg flex items-center justify-center bg-blue-500 text-white';
     sellingButton.name = 'tradingButton';
@@ -68,6 +78,7 @@ function createItem (enteredId, enteredImageUri, enteredTitle, enteredMainMessag
     form.appendChild(buyingButton);
     form.appendChild(document.createElement('div'));
     form.appendChild(sellingButton);
+    // item ID값. 다음 페이지에서 아이템 정보를 서버에서 가져오기 위한 값. hidden type
     const id = document.createElement('input');
     id.type = 'hidden';
     id.name = 'itemId';
@@ -77,6 +88,7 @@ function createItem (enteredId, enteredImageUri, enteredTitle, enteredMainMessag
     hoverButtons.appendChild(form);
     item.appendChild(hoverButtons);
 
+    // itemTable에 생성한 item 추가
     let itemTable = document.querySelector('.item-table');
     if (itemTable) {
         itemTable.appendChild(item);
@@ -88,3 +100,8 @@ function createItem (enteredId, enteredImageUri, enteredTitle, enteredMainMessag
 createItem('123', "https://static-cdn.jtvnw.net/jtv_user_pictures/919e1ba0-e13e-49ae-a660-181817e3970d-profile_image-300x300.png", '타이틀 1', '세부정보1', '세부정보2');
 // https://image.fmkorea.com/files/attach/new3/20230517/494354581/5422195760/5777684863/b5edceb05a174e368d1c465805e06684.png
 // https://img.hankyung.com/photo/202309/ZK.34399539.1-1200x.jpg
+
+// 노란색 내 정보 창에서 우측 화살표를 누르면 마이페이지 이동하는 리스너
+document.getElementById('myPageButton').addEventListener('click', () => {
+    window.location.href = 'mypage.html';
+});

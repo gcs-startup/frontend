@@ -10,6 +10,11 @@ body {
     padding: 2.3em;
 }
 
+#myPageButton:hover {
+    transition: background-color 0.3s;
+    background-color: aquamarine;
+}
+
 .item {
     position: relative; /* 자식 요소인 버튼을 올바르게 배치하기 위함 */
     transition: background-color 0.3s; /* 배경색 변경 효과 */;
